@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1654053343534542349}
   - component: {fileID: 1654053343534542346}
   - component: {fileID: 1654053343534542347}
-  - component: {fileID: 1654053343534542344}
+  - component: {fileID: 593226124481929606}
   m_Layer: 0
   m_Name: Litter Box
   m_TagString: Untagged
@@ -89,12 +89,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654053343534542345}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1654053343534542344
+--- !u!114 &593226124481929606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,6 +103,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654053343534542345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5df34b413b78564fa62cba1e8bd3a64, type: 3}
+  m_Script: {fileID: 11500000, guid: cf721c6bd2ff4b64b9bd3da1f5eddd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  isVictory: 0
