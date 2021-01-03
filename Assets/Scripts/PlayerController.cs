@@ -8,17 +8,35 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    [SerializeField] private float playerSpeed = 10f;
+    [SerializeField] public float playerSpeed = 10f; 
     [SerializeField] private float jumpHeight = 1f;
     [SerializeField] private float gravityValue = -15f;
+    private float initialSpeed;
+    private float powerUpTime = 5f;
 
     private void Start()
     {
+        initialSpeed = playerSpeed;
         controller = gameObject.AddComponent<CharacterController>();
     }
 
     void Update()
     {
+        if (playerSpeed != initialSpeed)
+        {
+            if (powerUpTime > 0)
+            {
+                powerUpTime -= Time.deltaTime;
+                
+            }
+            else
+            {
+                Debug.Log("Power up time has run out!");
+                powerUpTime = 5f;
+                playerSpeed = initialSpeed;
+            }
+        }
+        
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -42,8 +60,9 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
-    
-    
 
-
+    private void CountDownPowerUp()
+    {
+        
+    }
 }

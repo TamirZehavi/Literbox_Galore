@@ -2,32 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LitterBoxVictory : MonoBehaviour
+public class PowerUps : MonoBehaviour
 {
-    [SerializeField] private PlayerController player;
-    public bool isVictory = false;
+
+    [SerializeField] private PlayerController cat;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isVictory)
+        if (gameObject.tag == "SpeedUp")
         {
-            Debug.Log("Win");
-        }
+            Destroy(gameObject);
+            cat.playerSpeed += 20;
 
-        else
+        }
+        if (gameObject.tag == "SpeedDown")
         {
-            Debug.Log("no");
+            Destroy(gameObject);
+            cat.playerSpeed -= 20;
         }
     }
+
+
 }
