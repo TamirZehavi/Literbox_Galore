@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(transform.position.y < 0)
+        {
+            ManageScreens.gameOver = true;
+        }
+
         if (playerSpeed != initialSpeed)
         {
             if (powerUpTime > 0)

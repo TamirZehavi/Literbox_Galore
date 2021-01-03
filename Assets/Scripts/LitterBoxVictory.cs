@@ -23,6 +23,7 @@ public class LitterBoxVictory : MonoBehaviour
         if (isVictory)
         {
             Debug.Log("Win");
+            ManageScreens.victory = true;
         }
 
         else
